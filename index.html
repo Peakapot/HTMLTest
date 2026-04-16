@@ -3,531 +3,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Peakapot Security helps teams stay ahead of cyber threats with practical security services, curated cyber and AI news, and trusted podcast insights." />
-  <title>Peakapot Security | Cyber Defense & Intelligence</title>
+  <meta name="description" content="Peakapot Security provides modern cyber security services with clear, practical defense strategies." />
+  <title>Peakapot Security | Home</title>
   <style>
     :root {
-      --bg: #060b16;
-      --panel: #0f172a;
-      --text: #d6e2ff;
-      --muted: #92a5d1;
-      --accent: #38bdf8;
-      --accent-2: #22d3ee;
-      --danger: #f43f5e;
-      --border: #1f2b46;
-      --ok: #22c55e;
+      --bg: #f7fbff;
+      --panel: #ffffff;
+      --text: #10233f;
+      --muted: #4f6787;
+      --accent: #1d74d6;
+      --accent-soft: #e8f2ff;
+      --border: #cfe1f7;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Inter", "Segoe UI", Arial, sans-serif; }
 
     body {
-      background:
-        radial-gradient(circle at 15% 10%, rgba(34, 211, 238, 0.2), transparent 30%),
-        radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.18), transparent 28%),
-        linear-gradient(180deg, #050913, var(--bg));
+      background: linear-gradient(180deg, #fafdff, var(--bg));
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
     }
 
-    .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
-    }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
 
     header {
-      border-bottom: 1px solid var(--border);
-      background: rgba(10, 16, 33, 0.65);
-      backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 20;
-      transition: background 0.25s ease, box-shadow 0.25s ease;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
     }
 
-    header.scrolled {
-      background: rgba(6, 11, 22, 0.92);
-      box-shadow: 0 8px 24px rgba(2, 8, 23, 0.45);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.9rem 0;
-      gap: 1rem;
-    }
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--accent-2);
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.95rem 0; }
+    .logo { text-decoration: none; color: var(--accent); font-weight: 800; letter-spacing: 0.3px; }
+    .nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0.55rem; }
     .nav-link {
       text-decoration: none;
       color: var(--muted);
-      font-size: 0.95rem;
-      padding: 0.4rem 0.7rem;
+      font-size: 0.93rem;
+      border: 1px solid transparent;
       border-radius: 999px;
-      transition: color 0.2s ease, background 0.2s ease;
+      padding: 0.4rem 0.85rem;
+      transition: 0.2s ease;
     }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: #def2ff;
-      background: rgba(56, 189, 248, 0.14);
-    }
+    .nav-link:hover, .nav-link.active { color: var(--accent); border-color: var(--border); background: var(--accent-soft); }
 
     .hero {
-      padding: 4.5rem 0 3rem;
+      padding: 3.4rem 0 2.4rem;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 2rem;
+      gap: 1.4rem;
+      grid-template-columns: 1.15fr 1fr;
       align-items: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.15;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      max-width: 60ch;
     }
 
     .badge {
       display: inline-block;
-      margin-bottom: 1rem;
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      padding: 0.35rem 0.85rem;
+      margin-bottom: 0.8rem;
+      background: var(--accent-soft);
       color: var(--accent);
-      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.86rem;
+      padding: 0.35rem 0.75rem;
     }
+
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.14; margin-bottom: 1rem; }
+    .hero p { color: var(--muted); max-width: 60ch; margin-bottom: 1.2rem; }
+
+    .btn {
+      text-decoration: none;
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 10px;
+      padding: 0.72rem 1rem;
+      font-weight: 600;
+      margin-right: 0.65rem;
+    }
+
+    .btn.secondary { background: #ffffff; color: var(--accent); border: 1px solid var(--border); }
 
     .hero-image {
-      border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.32);
-      min-height: 330px;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-card,
-    .contact,
-    .podcast {
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(10, 18, 35, 0.95));
       border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.32);
+      box-shadow: 0 16px 36px rgba(19, 68, 126, 0.13);
+      min-height: 340px;
     }
 
-    .hero-card,
-    .podcast {
-      padding: 1.4rem;
-      margin-top: 1.1rem;
-    }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .hero-card h3,
-    .podcast h2 {
-      margin-bottom: 0.75rem;
-      color: var(--accent);
-    }
-
-    .hero-card ul {
-      list-style: none;
-    }
-
-    .hero-card li {
-      padding: 0.45rem 0;
-      color: var(--muted);
-      border-bottom: 1px dashed rgba(146, 165, 209, 0.25);
-    }
-
-    .hero-card li:last-child {
-      border-bottom: 0;
-    }
-
-    section {
-      padding: 2.5rem 0;
-    }
-
-    .section-title {
-      margin-bottom: 1rem;
-      font-size: 1.45rem;
-    }
-
-    .services {
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
+      padding-bottom: 2.8rem;
     }
 
-    .service {
-      background: rgba(15, 23, 42, 0.75);
+    .card {
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1rem;
+      box-shadow: 0 8px 24px rgba(24, 86, 158, 0.08);
     }
 
-    .service img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-      border-radius: 9px;
-      margin-bottom: 0.8rem;
-      border: 1px solid rgba(146, 165, 209, 0.2);
-    }
-
-    .service h4 {
-      margin-bottom: 0.5rem;
-      color: var(--accent-2);
-    }
-
-    .service p,
-    .podcast p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .contact {
-      padding: 1.4rem;
-      margin-top: 0.75rem;
-    }
-
-    .contact h2 {
-      margin-bottom: 0.5rem;
-    }
-
-    .contact p {
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .podcast-link {
-      display: inline-block;
-      margin-top: 0.65rem;
-      color: var(--accent-2);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .podcast-link:hover {
-      text-decoration: underline;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.9rem;
-      margin-bottom: 0.9rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.3rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: #0a1222;
-      color: var(--text);
-      padding: 0.75rem;
-      outline: none;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
-    }
-
-    textarea {
-      min-height: 130px;
-      resize: vertical;
-      margin-bottom: 0.8rem;
-    }
-
-    .btn {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      border: none;
-      color: #04111f;
-      font-weight: 700;
-      border-radius: 10px;
-      padding: 0.75rem 1rem;
-      cursor: pointer;
-      width: fit-content;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .note {
-      margin-top: 0.75rem;
-      color: #9ac8dc;
-      font-size: 0.9rem;
-    }
+    .card h3 { margin-bottom: 0.45rem; color: var(--accent); }
+    .card p { color: var(--muted); font-size: 0.95rem; }
 
     footer {
-      color: var(--muted);
       border-top: 1px solid var(--border);
-      padding: 1.2rem 0 2rem;
-      margin-top: 2.5rem;
+      color: var(--muted);
       text-align: center;
+      padding: 1.2rem 0 2rem;
+      margin-top: 0.8rem;
     }
 
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      color: var(--ok);
-      margin-top: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--ok);
-      box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.16);
-    }
-
-    @media (max-width: 840px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .nav { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
-  <header id="site-header">
+  <header>
     <div class="container nav">
-      <a href="#home" class="logo">Peakapot Security</a>
+      <a href="index.html" class="logo">Peakapot Security</a>
       <ul class="nav-links">
-        <li><a class="nav-link active" href="#home">Home</a></li>
-        <li><a class="nav-link" href="#services">Services</a></li>
-        <li><a class="nav-link" href="#gallery">Threat Intel</a></li>
-        <li><a class="nav-link" href="#podcast">Podcast</a></li>
+        <li><a class="nav-link active" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
+        <li><a class="nav-link" href="podcast.html">Podcast</a></li>
         <li><a class="nav-link" href="blog.html">Blog & RSS</a></li>
-        <li><a class="nav-link" href="#contact">Contact</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
   </header>
 
-  <main class="container" id="home">
+  <main class="container">
     <section class="hero">
       <div>
-        <span class="badge">24/7 Threat Monitoring</span>
-        <h1>Modern Cyber Security for Businesses of All Sizes</h1>
+        <span class="badge">Always-On Cyber Defense</span>
+        <h1>Sleek, modern security support for fast-moving teams.</h1>
         <p>
-          Peakapot Security helps organizations strengthen defenses, reduce vulnerabilities,
-          and respond to incidents fast. Secure your network, endpoints, and cloud
-          with practical, expert-led cyber security services.
+          We help businesses stay resilient with practical cyber security services, rapid response,
+          and clear security guidance that scales from startup to enterprise.
         </p>
-        <div class="status"><span class="dot"></span> Active security operations center</div>
-
-        <aside class="hero-card">
-          <h3>Core Security Capabilities</h3>
-          <ul>
-            <li>Vulnerability Assessment & Remediation Plans</li>
-            <li>Security Awareness Training & Phishing Simulations</li>
-            <li>Managed Detection & Incident Response</li>
-            <li>Cloud Security Baselines & Compliance Checks</li>
-          </ul>
-        </aside>
+        <a href="services.html" class="btn">Explore Services</a>
+        <a href="contact.html" class="btn secondary">Talk to Us</a>
       </div>
-
-      <div class="hero-image" aria-label="Cybersecurity operations center image">
-        <img
-          src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
-          alt="Security analyst reviewing threat dashboards in a modern operations center"
-        />
+      <div class="hero-image" aria-label="Banner image of Mount Everest peak">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80" alt="Snow-covered peak of Mount Everest above clouds" />
       </div>
     </section>
 
-    <section id="services">
-      <h2 class="section-title">Security Services</h2>
-      <div class="services">
-        <article class="service">
-          <img
-            src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=800&q=80"
-            alt="Ethical hacker performing penetration testing on code and infrastructure"
-          />
-          <h4>Penetration Testing</h4>
-          <p>Simulate real-world attack paths to identify and prioritize exploitable weaknesses.</p>
-        </article>
-        <article class="service">
-          <img
-            src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&q=80"
-            alt="Security response team coordinating incident response workflows"
-          />
-          <h4>Incident Response</h4>
-          <p>Contain and recover from active threats quickly with proven triage and response workflows.</p>
-        </article>
-        <article class="service">
-          <img
-            src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
-            alt="Digital network visualization representing hardened cloud architecture"
-          />
-          <h4>Security Hardening</h4>
-          <p>Reduce risk exposure with hardened systems, least privilege access, and secure configurations.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <h2 class="section-title">Modern Cybersecurity Visuals</h2>
-      <div class="services">
-        <article class="service">
-          <img
-            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
-            alt="Close-up of secure server hardware and blinking network indicators"
-          />
-          <h4>Secure Infrastructure</h4>
-          <p>Enterprise-grade infrastructure with encrypted data flow and hardened endpoints.</p>
-        </article>
-        <article class="service">
-          <img
-            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
-            alt="Developer workstation running code security scans and SIEM alerts"
-          />
-          <h4>Threat Hunting</h4>
-          <p>Continuous analysis of telemetry to detect anomalies before escalation.</p>
-        </article>
-        <article class="service">
-          <img
-            src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80"
-            alt="Dashboard showing compliance checks and zero trust policy enforcement"
-          />
-          <h4>Compliance Visibility</h4>
-          <p>Clear security posture insights for SOC 2, ISO 27001, and customer trust reviews.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="podcast" id="podcast">
-      <h2>Podcast Spotlight</h2>
-      <p>
-        Tune in to <strong>AI Daily Brief</strong> for quick, practical updates on AI trends,
-        tools, policy, and market shifts that can impact your security roadmap.
-      </p>
-      <a class="podcast-link" href="https://podcasts.apple.com/us/podcast/the-ai-daily-brief-formerly-the-ai-breakdown/id1680633614" target="_blank" rel="noopener noreferrer">Listen to AI Daily Brief →</a>
-    </section>
-
-    <section class="contact" id="contact">
-      <h2>Contact Me</h2>
-      <p>Use the form below and your message will be emailed to <strong>daniel@peakapot.com</strong>.</p>
-
-      <form action="https://formsubmit.co/daniel@peakapot.com" method="POST">
-        <input type="hidden" name="_subject" value="New Cyber Security Inquiry" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="table" />
-
-        <div class="form-grid">
-          <div>
-            <label for="name">Full Name</label>
-            <input id="name" name="name" type="text" placeholder="Jane Doe" required />
-          </div>
-          <div>
-            <label for="email">Email Address</label>
-            <input id="email" name="email" type="email" placeholder="jane@company.com" required />
-          </div>
-        </div>
-
-        <label for="company">Company</label>
-        <input id="company" name="company" type="text" placeholder="Company name" />
-
-        <label for="message" style="margin-top: 0.75rem;">How can we help?</label>
-        <textarea id="message" name="message" placeholder="Tell us about your current security needs..." required></textarea>
-
-        <button class="btn" type="submit">Send Secure Message</button>
-      </form>
-
-      <p class="note">Note: On first use, FormSubmit may require confirming the destination email address.</p>
+    <section class="cards" aria-label="Highlights">
+      <article class="card">
+        <h3>Clarity First</h3>
+        <p>Simple priorities, measurable actions, and executive-friendly reporting.</p>
+      </article>
+      <article class="card">
+        <h3>Rapid Response</h3>
+        <p>Contain threats quickly with tested triage, detection, and incident playbooks.</p>
+      </article>
+      <article class="card">
+        <h3>Modern Stack</h3>
+        <p>Secure cloud, endpoints, and identities with practical, low-friction controls.</p>
+      </article>
     </section>
   </main>
 
   <footer>
     &copy; 2026 Peakapot Security. Built for proactive cyber defense.
   </footer>
-
-  <script>
-    const header = document.getElementById('site-header');
-    const links = Array.from(document.querySelectorAll('.nav-link'));
-    const sectionLinks = links.filter((link) => link.getAttribute('href').startsWith('#'));
-    const sections = sectionLinks
-      .map((link) => document.querySelector(link.getAttribute('href')))
-      .filter(Boolean);
-
-    const setActiveLink = () => {
-      const fromTop = window.scrollY + 110;
-
-      sections.forEach((section, index) => {
-        const nextSection = sections[index + 1];
-        const inSection = fromTop >= section.offsetTop && (!nextSection || fromTop < nextSection.offsetTop);
-
-        if (inSection) {
-          links.forEach((link) => link.classList.remove('active'));
-          sectionLinks[index].classList.add('active');
-        }
-      });
-    };
-
-    const updateHeaderState = () => {
-      header.classList.toggle('scrolled', window.scrollY > 30);
-      setActiveLink();
-    };
-
-    window.addEventListener('scroll', updateHeaderState);
-    window.addEventListener('load', updateHeaderState);
-  </script>
 </body>
 </html>

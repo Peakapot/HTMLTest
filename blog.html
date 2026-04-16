@@ -7,88 +7,56 @@
   <title>Peakapot Security Blog | Cyber & AI RSS</title>
   <style>
     :root {
-      --bg: #060b16;
-      --panel: #0f172a;
-      --text: #d6e2ff;
-      --muted: #92a5d1;
-      --accent: #38bdf8;
-      --accent-2: #22d3ee;
-      --border: #1f2b46;
+      --bg: #f7fbff;
+      --panel: #ffffff;
+      --text: #10233f;
+      --muted: #4f6787;
+      --accent: #1d74d6;
+      --accent-soft: #e8f2ff;
+      --border: #cfe1f7;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
     }
 
     body {
-      background: linear-gradient(180deg, #050913, var(--bg));
+      background: linear-gradient(180deg, #fafdff, var(--bg));
       color: var(--text);
       line-height: 1.6;
       min-height: 100vh;
     }
 
-    .container {
-      width: min(1100px, 92%);
-      margin: 0 auto;
-    }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
 
-    header {
-      border-bottom: 1px solid var(--border);
-      background: rgba(10, 16, 33, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
+    header { border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.95); position: sticky; top: 0; z-index: 20; }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.9rem 0;
-      gap: 1rem;
-    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; gap: 1rem; }
 
-    .logo {
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--accent-2);
-      text-transform: uppercase;
-      text-decoration: none;
-    }
+    .logo { font-weight: 800; color: var(--accent); text-decoration: none; }
+
+    .nav-links { list-style: none; display: flex; gap: 0.55rem; flex-wrap: wrap; }
 
     .nav-link {
       text-decoration: none;
       color: var(--muted);
-      font-size: 0.95rem;
-      padding: 0.4rem 0.7rem;
+      font-size: 0.93rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 999px;
-      border: 1px solid var(--border);
     }
 
-    .hero {
-      padding: 2.8rem 0 1.2rem;
-    }
+    .nav-link:hover, .nav-link.active { color: var(--accent); background: var(--accent-soft); border: 1px solid var(--border); }
 
-    h1 {
-      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-      margin-bottom: 0.8rem;
-    }
+    .hero { padding: 2.8rem 0 1.2rem; }
 
-    .intro {
-      color: var(--muted);
-      max-width: 70ch;
-      margin-bottom: 1rem;
-    }
+    h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); margin-bottom: 0.8rem; }
 
-    .rss-links {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-      margin-top: 0.8rem;
-    }
+    .intro { color: var(--muted); max-width: 70ch; margin-bottom: 1rem; }
+
+    .rss-links { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 0.8rem; }
 
     .rss-links a {
       color: var(--accent);
@@ -97,98 +65,46 @@
       border-radius: 999px;
       padding: 0.45rem 0.8rem;
       font-size: 0.95rem;
+      background: #fff;
     }
 
-    .rss-links a:hover {
-      text-decoration: underline;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      padding: 1.5rem 0 2.2rem;
-    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; padding: 1.5rem 0 2.2rem; }
 
     .panel {
-      background: rgba(15, 23, 42, 0.86);
+      background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1rem;
+      box-shadow: 0 8px 24px rgba(24, 86, 158, 0.08);
     }
 
-    h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.7rem;
-      color: var(--accent-2);
-    }
+    h2 { font-size: 1.2rem; margin-bottom: 0.7rem; color: var(--accent); }
 
-    .feed-list {
-      list-style: none;
-      display: grid;
-      gap: 0.8rem;
-    }
+    .feed-list { list-style: none; display: grid; gap: 0.8rem; }
 
-    .feed-list li {
-      border-top: 1px dashed rgba(146, 165, 209, 0.25);
-      padding-top: 0.75rem;
-    }
+    .feed-list li { border-top: 1px dashed #d6e6fa; padding-top: 0.75rem; }
 
-    .feed-list li:first-child {
-      border-top: none;
-      padding-top: 0;
-    }
+    .feed-list li:first-child { border-top: none; padding-top: 0; }
 
-    .feed-list a {
-      color: #dff4ff;
-      text-decoration: none;
-      font-weight: 700;
-    }
+    .feed-list a { color: #0e3f7d; text-decoration: none; font-weight: 700; }
 
-    .feed-list a:hover {
-      text-decoration: underline;
-    }
+    .feed-list a:hover { text-decoration: underline; }
 
-    .meta {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
+    .meta { color: var(--muted); font-size: 0.88rem; }
 
-    .small {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-top: 0.3rem;
-    }
+    .small { color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem; }
 
-    .post-list {
-      display: grid;
-      gap: 0.9rem;
-      margin-top: 0.8rem;
-    }
+    .post-list { display: grid; gap: 0.9rem; margin-top: 0.8rem; }
 
-    .post {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.9rem;
-      background: rgba(10, 18, 35, 0.86);
-    }
+    .post { border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem; background: #fff; }
 
-    .post p {
-      color: var(--muted);
-      margin-top: 0.3rem;
-    }
+    .post p { color: var(--muted); margin-top: 0.3rem; }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.3rem 0 2rem;
-      color: var(--muted);
-      text-align: center;
-    }
+    footer { border-top: 1px solid var(--border); padding: 1.3rem 0 2rem; color: var(--muted); text-align: center; }
 
     @media (max-width: 840px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+      .grid { grid-template-columns: 1fr; }
+      .nav { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -196,7 +112,14 @@
   <header>
     <div class="container nav">
       <a href="index.html" class="logo">Peakapot Security</a>
-      <a class="nav-link" href="index.html">← Back to Home</a>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
+        <li><a class="nav-link" href="podcast.html">Podcast</a></li>
+        <li><a class="nav-link active" href="blog.html">Blog & RSS</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </header>
 
@@ -251,14 +174,8 @@
 
   <script>
     const feedTargets = [
-      {
-        elementId: 'cyber-feed',
-        source: 'https://feeds.feedburner.com/TheHackersNews'
-      },
-      {
-        elementId: 'ai-feed',
-        source: 'https://www.artificialintelligence-news.com/feed/'
-      }
+      { elementId: 'cyber-feed', source: 'https://feeds.feedburner.com/TheHackersNews' },
+      { elementId: 'ai-feed', source: 'https://www.artificialintelligence-news.com/feed/' }
     ];
 
     const renderItems = (listElement, items) => {

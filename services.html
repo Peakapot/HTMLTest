@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Peakapot Security services for penetration testing, incident response, and hardening." />
+  <title>Peakapot Security | Services</title>
+  <style>
+    :root { --bg:#f7fbff; --panel:#fff; --text:#10233f; --muted:#4f6787; --accent:#1d74d6; --accent-soft:#e8f2ff; --border:#cfe1f7; }
+    * { box-sizing:border-box; margin:0; padding:0; font-family:"Inter","Segoe UI",Arial,sans-serif; }
+    body { background:linear-gradient(180deg,#fafdff,var(--bg)); color:var(--text); line-height:1.6; }
+    .container { width:min(1120px,92%); margin:0 auto; }
+    header { border-bottom:1px solid var(--border); background:#fff; position:sticky; top:0; }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:0.95rem 0; }
+    .logo { text-decoration:none; color:var(--accent); font-weight:800; }
+    .nav-links { list-style:none; display:flex; gap:0.55rem; flex-wrap:wrap; }
+    .nav-link { text-decoration:none; color:var(--muted); border-radius:999px; padding:0.4rem 0.85rem; }
+    .nav-link:hover,.nav-link.active { color:var(--accent); background:var(--accent-soft); border:1px solid var(--border); }
+    main { padding:2.4rem 0 2.8rem; }
+    h1 { font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:0.6rem; }
+    .lead { color:var(--muted); margin-bottom:1.4rem; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+    .card { background:var(--panel); border:1px solid var(--border); border-radius:12px; overflow:hidden; box-shadow:0 8px 24px rgba(24,86,158,.08); }
+    .card img { width:100%; height:180px; object-fit:cover; display:block; }
+    .card-body { padding:1rem; }
+    .card h2 { color:var(--accent); margin-bottom:0.45rem; font-size:1.1rem; }
+    .card p { color:var(--muted); font-size:0.95rem; }
+    footer { border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:1.2rem 0 2rem; }
+    @media (max-width:900px){ .grid{grid-template-columns:1fr;} .nav{flex-direction:column; align-items:flex-start;} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">Peakapot Security</a>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link active" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
+        <li><a class="nav-link" href="podcast.html">Podcast</a></li>
+        <li><a class="nav-link" href="blog.html">Blog & RSS</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <main class="container">
+    <h1>Security Services</h1>
+    <p class="lead">Focused services to reduce risk, improve resilience, and keep your business moving.</p>
+    <section class="grid">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=800&q=80" alt="Penetration testing" />
+        <div class="card-body">
+          <h2>Penetration Testing</h2>
+          <p>Simulate realistic attack paths and get prioritized fixes with clear remediation guidance.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&q=80" alt="Incident response team" />
+        <div class="card-body">
+          <h2>Incident Response</h2>
+          <p>Respond rapidly to threats with triage, containment, communication, and recovery support.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Security hardening" />
+        <div class="card-body">
+          <h2>Security Hardening</h2>
+          <p>Strengthen endpoints, cloud workloads, and identity controls to lower your attack surface.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer>&copy; 2026 Peakapot Security.</footer>
+</body>
+</html>
