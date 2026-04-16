@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyber Shield | Security Services</title>
+  <meta name="description" content="Peakapot Security helps teams stay ahead of cyber threats with practical security services, curated cyber and AI news, and trusted podcast insights." />
+  <title>Peakapot Security | Cyber Defense & Intelligence</title>
   <style>
     :root {
       --bg: #060b16;
@@ -79,6 +80,7 @@
       gap: 1rem;
       align-items: center;
       list-style: none;
+      flex-wrap: wrap;
     }
 
     .nav-link {
@@ -142,19 +144,22 @@
     }
 
     .hero-card,
-    .contact {
+    .contact,
+    .podcast {
       background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(10, 18, 35, 0.95));
       border: 1px solid var(--border);
       border-radius: 14px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.32);
     }
 
-    .hero-card {
+    .hero-card,
+    .podcast {
       padding: 1.4rem;
       margin-top: 1.1rem;
     }
 
-    .hero-card h3 {
+    .hero-card h3,
+    .podcast h2 {
       margin-bottom: 0.75rem;
       color: var(--accent);
     }
@@ -209,7 +214,8 @@
       color: var(--accent-2);
     }
 
-    .service p {
+    .service p,
+    .podcast p {
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -226,6 +232,18 @@
     .contact p {
       color: var(--muted);
       margin-bottom: 1rem;
+    }
+
+    .podcast-link {
+      display: inline-block;
+      margin-top: 0.65rem;
+      color: var(--accent-2);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .podcast-link:hover {
+      text-decoration: underline;
     }
 
     .form-grid {
@@ -274,6 +292,8 @@
       padding: 0.75rem 1rem;
       cursor: pointer;
       width: fit-content;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .note {
@@ -313,10 +333,6 @@
         align-items: flex-start;
       }
 
-      .nav-links {
-        flex-wrap: wrap;
-      }
-
       .hero {
         grid-template-columns: 1fr;
       }
@@ -334,11 +350,13 @@
 <body>
   <header id="site-header">
     <div class="container nav">
-      <a href="#home" class="logo">Cyber Shield</a>
+      <a href="#home" class="logo">Peakapot Security</a>
       <ul class="nav-links">
         <li><a class="nav-link active" href="#home">Home</a></li>
         <li><a class="nav-link" href="#services">Services</a></li>
         <li><a class="nav-link" href="#gallery">Threat Intel</a></li>
+        <li><a class="nav-link" href="#podcast">Podcast</a></li>
+        <li><a class="nav-link" href="blog.html">Blog & RSS</a></li>
         <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -350,7 +368,7 @@
         <span class="badge">24/7 Threat Monitoring</span>
         <h1>Modern Cyber Security for Businesses of All Sizes</h1>
         <p>
-          We help organizations strengthen defenses, reduce vulnerabilities,
+          Peakapot Security helps organizations strengthen defenses, reduce vulnerabilities,
           and respond to incidents fast. Secure your network, endpoints, and cloud
           with practical, expert-led cyber security services.
         </p>
@@ -435,6 +453,15 @@
       </div>
     </section>
 
+    <section class="podcast" id="podcast">
+      <h2>Podcast Spotlight</h2>
+      <p>
+        Tune in to <strong>AI Daily Brief</strong> for quick, practical updates on AI trends,
+        tools, policy, and market shifts that can impact your security roadmap.
+      </p>
+      <a class="podcast-link" href="https://podcasts.apple.com/us/podcast/the-ai-daily-brief-formerly-the-ai-breakdown/id1680633614" target="_blank" rel="noopener noreferrer">Listen to AI Daily Brief →</a>
+    </section>
+
     <section class="contact" id="contact">
       <h2>Contact Me</h2>
       <p>Use the form below and your message will be emailed to <strong>daniel@peakapot.com</strong>.</p>
@@ -469,13 +496,14 @@
   </main>
 
   <footer>
-    &copy; 2026 Cyber Shield. Built for proactive cyber defense.
+    &copy; 2026 Peakapot Security. Built for proactive cyber defense.
   </footer>
 
   <script>
     const header = document.getElementById('site-header');
     const links = Array.from(document.querySelectorAll('.nav-link'));
-    const sections = links
+    const sectionLinks = links.filter((link) => link.getAttribute('href').startsWith('#'));
+    const sections = sectionLinks
       .map((link) => document.querySelector(link.getAttribute('href')))
       .filter(Boolean);
 
@@ -488,7 +516,7 @@
 
         if (inSection) {
           links.forEach((link) => link.classList.remove('active'));
-          links[index].classList.add('active');
+          sectionLinks[index].classList.add('active');
         }
       });
     };
