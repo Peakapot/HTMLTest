@@ -13,11 +13,24 @@
     header { border-bottom:1px solid var(--border); background:#fff; position:sticky; top:0; }
     .nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:0.95rem 0; }
     .logo { text-decoration:none; color:var(--accent); font-weight:800; }
+
+    .logo { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .logo img { width: 30px; height: 30px; border-radius: 8px; box-shadow: 0 8px 18px rgba(29,116,214,0.24); }
+    .logo span { line-height: 1; }
     .nav-links { list-style:none; display:flex; gap:0.55rem; flex-wrap:wrap; }
     .nav-link { text-decoration:none; color:var(--muted); border-radius:999px; padding:0.4rem 0.85rem; }
     .nav-link:hover,.nav-link.active { color:var(--accent); background:var(--accent-soft); border:1px solid var(--border); }
     main { padding:2.4rem 0 2.8rem; }
     .panel { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:1.4rem; box-shadow:0 8px 24px rgba(24,86,158,.08); }
+    .contact-image {
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      margin:0.7rem 0 1rem;
+      box-shadow:0 10px 22px rgba(24,86,158,.1);
+      max-height:260px;
+    }
+    .contact-image img { width:100%; height:100%; object-fit:cover; display:block; }
     h1 { margin-bottom:0.55rem; font-size:clamp(1.8rem,4vw,2.5rem); }
     p { color:var(--muted); margin-bottom:0.9rem; }
     .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; margin-bottom:0.7rem; }
@@ -49,7 +62,7 @@
   <div class="data-points" aria-hidden="true"></div>
   <header>
     <div class="container nav">
-      <a href="index.html" class="logo">Peakapot Security</a>
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Peakapot Security logo" /><span>Peakapot Security</span></a>
       <ul class="nav-links">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="services.html">Services</a></li>
@@ -66,6 +79,9 @@
       <h1>Contact Peakapot Security</h1>
       <p>Send your requirements and we'll get back to you at <strong>daniel@peakapot.com</strong>.</p>
       <p>Prefer social? Connect via <a href="https://www.linkedin.com/peakapot" target="_blank" rel="noopener noreferrer">LinkedIn.com/peakapot</a>.</p>
+      <div class="contact-image" aria-label="Team planning a cybersecurity engagement">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Consultants discussing cyber security strategy with a client" />
+      </div>
       <form action="https://formsubmit.co/daniel@peakapot.com" method="POST">
         <input type="hidden" name="_subject" value="New Cyber Security Inquiry" />
         <input type="hidden" name="_captcha" value="false" />

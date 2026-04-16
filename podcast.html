@@ -13,11 +13,24 @@
     header { border-bottom:1px solid var(--border); background:#fff; position:sticky; top:0; }
     .nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:0.95rem 0; }
     .logo { text-decoration:none; color:var(--accent); font-weight:800; }
+
+    .logo { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .logo img { width: 30px; height: 30px; border-radius: 8px; box-shadow: 0 8px 18px rgba(29,116,214,0.24); }
+    .logo span { line-height: 1; }
     .nav-links { list-style:none; display:flex; gap:0.55rem; flex-wrap:wrap; }
     .nav-link { text-decoration:none; color:var(--muted); border-radius:999px; padding:0.4rem 0.85rem; }
     .nav-link:hover,.nav-link.active { color:var(--accent); background:var(--accent-soft); border:1px solid var(--border); }
     main { padding:2.6rem 0 2.8rem; }
     .panel { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:1.4rem; box-shadow:0 8px 24px rgba(24,86,158,.08); }
+    .hero-image {
+      border:1px solid var(--border);
+      border-radius:12px;
+      overflow:hidden;
+      margin:0.8rem 0 1rem;
+      box-shadow:0 10px 22px rgba(24,86,158,.1);
+      max-height:260px;
+    }
+    .hero-image img { width:100%; height:100%; object-fit:cover; display:block; }
     .pod-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0.9rem; margin-top:1rem; }
     .pod { border:1px solid var(--border); border-radius:12px; padding:1rem; background:#fff; }
     h1 { margin-bottom:0.7rem; font-size:clamp(1.8rem,4vw,2.5rem); }
@@ -47,7 +60,7 @@
   <div class="data-points" aria-hidden="true"></div>
   <header>
     <div class="container nav">
-      <a href="index.html" class="logo">Peakapot Security</a>
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Peakapot Security logo" /><span>Peakapot Security</span></a>
       <ul class="nav-links">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="services.html">Services</a></li>
@@ -63,6 +76,9 @@
     <section class="panel">
       <h1>Podcast Spotlight</h1>
       <p>Stay current on fast-changing AI and cyber topics with concise market and strategy updates.</p>
+      <div class="hero-image" aria-label="Podcast recording and cybersecurity setup">
+        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1400&q=80" alt="Microphone, laptop, and audio setup for cybersecurity podcast production" />
+      </div>
       <div class="pod-grid">
         <article class="pod">
           <h2>AI Daily Brief</h2>
