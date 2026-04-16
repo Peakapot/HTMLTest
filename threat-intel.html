@@ -26,10 +26,26 @@
     .card h2 { color:var(--accent); margin-bottom:0.45rem; font-size:1.1rem; }
     .card p { color:var(--muted); font-size:0.95rem; }
     footer { border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:1.2rem 0 2rem; }
+
+    .data-points {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.5;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(75, 164, 255, 0.22) 0 3px, transparent 4px),
+        radial-gradient(circle at 28% 72%, rgba(75, 164, 255, 0.22) 0 3px, transparent 4px),
+        radial-gradient(circle at 58% 30%, rgba(75, 164, 255, 0.2) 0 3px, transparent 4px),
+        radial-gradient(circle at 76% 62%, rgba(75, 164, 255, 0.2) 0 3px, transparent 4px),
+        radial-gradient(circle at 88% 16%, rgba(75, 164, 255, 0.18) 0 3px, transparent 4px);
+    }
+
     @media (max-width:900px){ .grid{grid-template-columns:1fr;} .nav{flex-direction:column; align-items:flex-start;} }
   </style>
 </head>
 <body>
+  <div class="data-points" aria-hidden="true"></div>
   <header>
     <div class="container nav">
       <a href="index.html" class="logo">Peakapot Security</a>
@@ -39,6 +55,7 @@
         <li><a class="nav-link active" href="threat-intel.html">Threat Intel</a></li>
         <li><a class="nav-link" href="podcast.html">Podcast</a></li>
         <li><a class="nav-link" href="blog.html">Blog & RSS</a></li>
+        <li><a class="nav-link" href="coaching-mentoring.html">Coaching & Mentoring</a></li>
         <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>

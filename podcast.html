@@ -18,14 +18,33 @@
     .nav-link:hover,.nav-link.active { color:var(--accent); background:var(--accent-soft); border:1px solid var(--border); }
     main { padding:2.6rem 0 2.8rem; }
     .panel { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:1.4rem; box-shadow:0 8px 24px rgba(24,86,158,.08); }
+    .pod-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0.9rem; margin-top:1rem; }
+    .pod { border:1px solid var(--border); border-radius:12px; padding:1rem; background:#fff; }
     h1 { margin-bottom:0.7rem; font-size:clamp(1.8rem,4vw,2.5rem); }
     p { color:var(--muted); margin-bottom:0.9rem; }
+    .pod h2 { font-size:1.1rem; margin-bottom:0.35rem; color:var(--accent); }
     .link { text-decoration:none; color:#fff; background:var(--accent); border-radius:10px; padding:0.7rem 1rem; display:inline-block; font-weight:600; }
     footer { border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:1.2rem 0 2rem; }
-    @media (max-width:900px){ .nav{flex-direction:column; align-items:flex-start;} }
+
+    .data-points {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.5;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(75, 164, 255, 0.22) 0 3px, transparent 4px),
+        radial-gradient(circle at 28% 72%, rgba(75, 164, 255, 0.22) 0 3px, transparent 4px),
+        radial-gradient(circle at 58% 30%, rgba(75, 164, 255, 0.2) 0 3px, transparent 4px),
+        radial-gradient(circle at 76% 62%, rgba(75, 164, 255, 0.2) 0 3px, transparent 4px),
+        radial-gradient(circle at 88% 16%, rgba(75, 164, 255, 0.18) 0 3px, transparent 4px);
+    }
+
+    @media (max-width:900px){ .nav{flex-direction:column; align-items:flex-start;} .pod-grid{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
+  <div class="data-points" aria-hidden="true"></div>
   <header>
     <div class="container nav">
       <a href="index.html" class="logo">Peakapot Security</a>
@@ -35,6 +54,7 @@
         <li><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
         <li><a class="nav-link active" href="podcast.html">Podcast</a></li>
         <li><a class="nav-link" href="blog.html">Blog & RSS</a></li>
+        <li><a class="nav-link" href="coaching-mentoring.html">Coaching & Mentoring</a></li>
         <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -43,8 +63,18 @@
     <section class="panel">
       <h1>Podcast Spotlight</h1>
       <p>Stay current on fast-changing AI and cyber topics with concise market and strategy updates.</p>
-      <p>Recommended: <strong>AI Daily Brief</strong> for practical updates on policy, tools, and industry shifts.</p>
-      <a class="link" href="https://podcasts.apple.com/us/podcast/the-ai-daily-brief-formerly-the-ai-breakdown/id1680633614" target="_blank" rel="noopener noreferrer">Listen to AI Daily Brief</a>
+      <div class="pod-grid">
+        <article class="pod">
+          <h2>AI Daily Brief</h2>
+          <p>Practical updates on policy, tools, and shifts shaping secure AI adoption.</p>
+          <a class="link" href="https://podcasts.apple.com/us/podcast/the-ai-daily-brief-formerly-the-ai-breakdown/id1680633614" target="_blank" rel="noopener noreferrer">Listen to AI Daily Brief</a>
+        </article>
+        <article class="pod">
+          <h2>The CyberWire</h2>
+          <p>Daily cybersecurity news and analysis to keep your threat perspective sharp.</p>
+          <a class="link" href="https://thecyberwire.com/podcasts/daily-podcast" target="_blank" rel="noopener noreferrer">Listen to The CyberWire</a>
+        </article>
+      </div>
     </section>
   </main>
   <footer>&copy; 2026 Peakapot Security.</footer>
