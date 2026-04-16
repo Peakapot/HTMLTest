@@ -90,8 +90,25 @@
         radial-gradient(circle at 76% 62%, rgba(75, 164, 255, 0.2) 0 3px, transparent 4px),
         radial-gradient(circle at 88% 16%, rgba(75, 164, 255, 0.18) 0 3px, transparent 4px);
     }
+
+    .animated { animation: riseIn 0.7s ease both; }
+    .panel:nth-of-type(2) { animation-delay: 0.08s; }
+    .panel:nth-of-type(3) { animation-delay: 0.14s; }
+    .panel:nth-of-type(4) { animation-delay: 0.2s; }
+    .panel:nth-of-type(5) { animation-delay: 0.26s; }
+    .panel:nth-of-type(6) { animation-delay: 0.32s; }
+    .models-grid, .testimonials-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0.9rem; }
+    .model-card, .testimonial-card { border:1px solid var(--border); border-radius:12px; padding:1rem; background:#fff; }
+    .model-card h3, .testimonial-card h3 { color:var(--accent); margin-bottom:0.3rem; }
+    .model-tag { display:inline-block; margin-bottom:0.35rem; font-size:0.75rem; padding:0.15rem 0.5rem; border-radius:999px; background:var(--accent-soft); color:var(--accent); border:1px solid var(--border); font-weight:700; }
+    .testimonial-card { position:relative; overflow:hidden; }
+    .testimonial-card::before { content:"“"; position:absolute; right:0.55rem; top:-0.35rem; font-size:3rem; color:rgba(29,116,214,.16); font-weight:700; }
+    .pulse-note { border:1px dashed var(--border); background:var(--accent-soft); border-radius:10px; padding:0.75rem; margin-top:0.75rem; font-weight:600; color:var(--text); animation:pulseGlow 2.4s ease-in-out infinite; }
+    @keyframes riseIn { from { opacity:0; transform:translateY(16px);} to { opacity:1; transform:translateY(0);} }
+    @keyframes pulseGlow { 0%,100% { box-shadow:0 0 0 rgba(29,116,214,0.05);} 50% { box-shadow:0 0 0 10px rgba(29,116,214,0.08);} }
+
     footer { border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:1.2rem 0 2rem; }
-    @media (max-width:900px){ .path-grid,.qualifications,.book-grid{grid-template-columns:1fr;} .nav{flex-direction:column; align-items:flex-start;} }
+    @media (max-width:900px){ .path-grid,.qualifications,.book-grid,.models-grid,.testimonials-grid{grid-template-columns:1fr;} .nav{flex-direction:column; align-items:flex-start;} }
   </style>
 </head>
 <body>
@@ -112,7 +129,7 @@
   </header>
 
   <main class="container">
-    <section class="panel">
+    <section class="panel animated">
       <h1>AI Security Coaching & Mentoring</h1>
       <p>Personalized mentoring for cyber professionals moving into AI security, governance, and technical leadership.</p>
       <div class="mentor-image" aria-label="Cybersecurity mentoring session">
@@ -124,7 +141,7 @@
       </div>
     </section>
 
-    <section class="panel">
+    <section class="panel animated">
       <h2>Example Career Paths</h2>
       <div class="path-grid">
         <article class="path">
@@ -217,7 +234,7 @@
       </div>
     </section>
 
-    <section class="panel">
+    <section class="panel animated">
       <h2>Example Certification Plan Timeline</h2>
       <p>A practical progression for someone building from core IT networking into security operations and governance capability.</p>
       <div class="path-diagram" aria-label="N+, S+, CISMP timeline">
@@ -248,7 +265,47 @@
       </div>
     </section>
 
-    <section class="panel">
+    <section class="panel animated">
+      <h2>Coaching Models We Apply</h2>
+      <p>Mentoring sessions are structured around proven models so every action is measurable and aligned to your career outcomes.</p>
+      <div class="models-grid">
+        <article class="model-card">
+          <span class="model-tag">GROW</span>
+          <h3>Goal-Reality-Options-Will</h3>
+          <p>We define your target role, assess where you are now, explore strategic pathways, and commit to a weekly execution plan.</p>
+        </article>
+        <article class="model-card">
+          <span class="model-tag">SMARTER</span>
+          <h3>Outcome Design</h3>
+          <p>Your milestones are specific, measurable, and reviewed regularly so progress is visible across certifications, projects, and interviews.</p>
+        </article>
+        <article class="model-card">
+          <span class="model-tag">OSKAR</span>
+          <h3>Solution-Focused Momentum</h3>
+          <p>We identify strengths already working for you and scale them into repeatable routines for confident job-search and leadership performance.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel animated">
+      <h2>What Students Say</h2>
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <h3>Priya, SOC Analyst</h3>
+          <p>"The coaching plan turned a vague goal into a clear roadmap. I moved into an AI security-focused analyst role in under 6 months."</p>
+        </article>
+        <article class="testimonial-card">
+          <h3>Marcus, Security Engineer</h3>
+          <p>"Each session combined strategy and accountability. The interview practice alone helped me secure two final-stage offers."</p>
+        </article>
+        <article class="testimonial-card">
+          <h3>Amelia, GRC Professional</h3>
+          <p>"The frameworks and feedback gave me confidence to lead AI governance conversations with senior stakeholders."</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel animated">
       <h2>Industry Qualifications to Target</h2>
       <div class="qualifications">
         <article class="path">
@@ -270,7 +327,7 @@
       </div>
     </section>
 
-    <section class="panel">
+    <section class="panel animated">
       <h2>Coaching & Mentoring Support Summary</h2>
       <ul>
         <li><strong>Career mapping:</strong> We identify your current level, target role, and the best certification sequence for your timeline.</li>
@@ -284,6 +341,7 @@
     <section class="panel" id="book-call">
       <h2>Book a Career Call</h2>
       <p>Share your current level and goals. We'll map a focused 90-day progression plan in your call.</p>
+      <p class="pulse-note">Your first career call is 30 minutes and completely free.</p>
       <form action="https://formsubmit.co/daniel@peakapot.com" method="POST">
         <input type="hidden" name="_subject" value="Career Coaching Call Request" />
         <input type="hidden" name="_captcha" value="false" />

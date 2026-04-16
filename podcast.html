@@ -32,6 +32,10 @@
     }
     .hero-image img { width:100%; height:100%; object-fit:cover; display:block; }
     .pod-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0.9rem; margin-top:1rem; }
+    .logo-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0.8rem; margin:1rem 0; }
+    .logo-tile { border:1px solid var(--border); border-radius:12px; background:linear-gradient(180deg,#fff,var(--accent-soft)); padding:0.9rem; display:flex; flex-direction:column; align-items:center; gap:0.45rem; text-align:center; }
+    .logo-tile img { width:72px; height:72px; border-radius:16px; box-shadow:0 10px 20px rgba(29,116,214,0.18); }
+    .logo-tile span { color:var(--muted); font-size:0.88rem; }
     .pod { border:1px solid var(--border); border-radius:12px; padding:1rem; background:#fff; }
     h1 { margin-bottom:0.7rem; font-size:clamp(1.8rem,4vw,2.5rem); }
     p { color:var(--muted); margin-bottom:0.9rem; }
@@ -53,7 +57,7 @@
         radial-gradient(circle at 88% 16%, rgba(75, 164, 255, 0.18) 0 3px, transparent 4px);
     }
 
-    @media (max-width:900px){ .nav{flex-direction:column; align-items:flex-start;} .pod-grid{grid-template-columns:1fr;} }
+    @media (max-width:900px){ .nav{flex-direction:column; align-items:flex-start;} .pod-grid,.logo-gallery{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
@@ -78,6 +82,22 @@
       <p>Stay current on fast-changing AI and cyber topics with concise market and strategy updates.</p>
       <div class="hero-image" aria-label="Podcast recording and cybersecurity setup">
         <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1400&q=80" alt="Microphone, laptop, and audio setup for cybersecurity podcast production" />
+      </div>
+      <h2 style="color:var(--accent); margin-top:0.2rem;">Podcast Brand Gallery</h2>
+      <p>Recognize our episodes instantly with visuals inspired by the Peakapot podcast logo.</p>
+      <div class="logo-gallery" aria-label="Peakapot podcast logo gallery">
+        <figure class="logo-tile">
+          <img src="assets/logo.svg" alt="Peakapot podcast logo on blue gradient tile" />
+          <span>Episode Highlight Artwork</span>
+        </figure>
+        <figure class="logo-tile">
+          <img src="assets/logo.svg" alt="Peakapot podcast logo for interview episodes" />
+          <span>Guest Interview Covers</span>
+        </figure>
+        <figure class="logo-tile">
+          <img src="assets/logo.svg" alt="Peakapot podcast logo for AI security updates" />
+          <span>AI Security News Capsules</span>
+        </figure>
       </div>
       <div class="pod-grid">
         <article class="pod">
