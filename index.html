@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Shield | Security Services</title>
+  <style>
+    :root {
+      --bg: #060b16;
+      --panel: #0f172a;
+      --text: #d6e2ff;
+      --muted: #92a5d1;
+      --accent: #38bdf8;
+      --accent-2: #22d3ee;
+      --danger: #f43f5e;
+      --border: #1f2b46;
+      --ok: #22c55e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 15% 10%, rgba(34, 211, 238, 0.2), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.18), transparent 28%),
+        linear-gradient(180deg, #050913, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 16, 33, 0.75);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent-2);
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      max-width: 60ch;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.35rem 0.85rem;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .hero-card,
+    .contact {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(10, 18, 35, 0.95));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.32);
+    }
+
+    .hero-card {
+      padding: 1.4rem;
+    }
+
+    .hero-card h3 {
+      margin-bottom: 0.75rem;
+      color: var(--accent);
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      padding: 0.45rem 0;
+      color: var(--muted);
+      border-bottom: 1px dashed rgba(146, 165, 209, 0.25);
+    }
+
+    .hero-card li:last-child {
+      border-bottom: 0;
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .service {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .service h4 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-2);
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact {
+      padding: 1.4rem;
+      margin-top: 0.75rem;
+    }
+
+    .contact h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0a1222;
+      color: var(--text);
+      padding: 0.75rem;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+      margin-bottom: 0.8rem;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border: none;
+      color: #04111f;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      width: fit-content;
+    }
+
+    .note {
+      margin-top: 0.75rem;
+      color: #9ac8dc;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding: 1.2rem 0 2rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--ok);
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--ok);
+      box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.16);
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Cyber Shield</div>
+      <div>Protecting your digital frontier</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">24/7 Threat Monitoring</span>
+        <h1>Modern Cyber Security for Businesses of All Sizes</h1>
+        <p>
+          We help organizations strengthen defenses, reduce vulnerabilities,
+          and respond to incidents fast. Secure your network, endpoints, and cloud
+          with practical, expert-led cyber security services.
+        </p>
+        <div class="status"><span class="dot"></span> Active security operations center</div>
+      </div>
+      <aside class="hero-card">
+        <h3>Core Security Capabilities</h3>
+        <ul>
+          <li>Vulnerability Assessment & Remediation Plans</li>
+          <li>Security Awareness Training & Phishing Simulations</li>
+          <li>Managed Detection & Incident Response</li>
+          <li>Cloud Security Baselines & Compliance Checks</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section>
+      <div class="services">
+        <article class="service">
+          <h4>Penetration Testing</h4>
+          <p>Simulate real-world attack paths to identify and prioritize exploitable weaknesses.</p>
+        </article>
+        <article class="service">
+          <h4>Incident Response</h4>
+          <p>Contain and recover from active threats quickly with proven triage and response workflows.</p>
+        </article>
+        <article class="service">
+          <h4>Security Hardening</h4>
+          <p>Reduce risk exposure with hardened systems, least privilege access, and secure configurations.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+      <p>Use the form below and your message will be emailed to <strong>daniel@peakapot.com</strong>.</p>
+
+      <form action="https://formsubmit.co/daniel@peakapot.com" method="POST">
+        <input type="hidden" name="_subject" value="New Cyber Security Inquiry" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+
+        <div class="form-grid">
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+          </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="jane@company.com" required />
+          </div>
+        </div>
+
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" placeholder="Company name" />
+
+        <label for="message" style="margin-top: 0.75rem;">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Tell us about your current security needs..." required></textarea>
+
+        <button class="btn" type="submit">Send Secure Message</button>
+      </form>
+
+      <p class="note">Note: On first use, FormSubmit may require confirming the destination email address.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Cyber Shield. Built for proactive cyber defense.
+  </footer>
+</body>
+</html>
