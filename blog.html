@@ -38,6 +38,10 @@
 
     .logo { font-weight: 800; color: var(--accent); text-decoration: none; }
 
+    .logo { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .logo img { width: 30px; height: 30px; border-radius: 8px; box-shadow: 0 8px 18px rgba(29,116,214,0.24); }
+    .logo span { line-height: 1; }
+
     .nav-links { list-style: none; display: flex; gap: 0.55rem; flex-wrap: wrap; }
 
     .nav-link {
@@ -51,6 +55,15 @@
     .nav-link:hover, .nav-link.active { color: var(--accent); background: var(--accent-soft); border: 1px solid var(--border); }
 
     .hero { padding: 2.8rem 0 1.2rem; }
+    .hero-visual {
+      margin-top: 1rem;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 26px rgba(24, 86, 158, 0.12);
+      max-height: 320px;
+    }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); margin-bottom: 0.8rem; }
 
@@ -127,7 +140,7 @@
   <div class="data-points" aria-hidden="true"></div>
   <header>
     <div class="container nav">
-      <a href="index.html" class="logo">Peakapot Security</a>
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Peakapot Security logo" /><span>Peakapot Security</span></a>
       <ul class="nav-links">
         <li><a class="nav-link" href="index.html">Home</a></li>
         <li><a class="nav-link" href="services.html">Services</a></li>
@@ -147,6 +160,9 @@
         Insights, practical guidance, and daily signals from the cyber and AI landscape.
         The latest headlines below are pulled from live RSS sources.
       </p>
+      <div class="hero-visual" aria-label="Security operations center">
+        <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&w=1400&q=80" alt="Security analysts reviewing threat and AI telemetry dashboards" />
+      </div>
       <div class="rss-links">
         <a href="news-feed.xml">Peakapot RSS Index</a>
         <a href="https://feeds.feedburner.com/TheHackersNews" target="_blank" rel="noopener noreferrer">Cyber RSS Source</a>

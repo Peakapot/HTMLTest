@@ -38,6 +38,10 @@
 
     .nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.95rem 0; }
     .logo { text-decoration: none; color: var(--accent); font-weight: 800; letter-spacing: 0.3px; }
+
+    .logo { display: inline-flex; align-items: center; gap: 0.55rem; }
+    .logo img { width: 30px; height: 30px; border-radius: 8px; box-shadow: 0 8px 18px rgba(29,116,214,0.24); }
+    .logo span { line-height: 1; }
     .nav-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0.55rem; }
     .nav-link {
       text-decoration: none;
@@ -147,7 +151,7 @@
   <div class="data-points" aria-hidden="true"></div>
   <header>
     <div class="container nav">
-      <a href="index.html" class="logo">Peakapot Security</a>
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Peakapot Security logo" /><span>Peakapot Security</span></a>
       <ul class="nav-links">
         <li><a class="nav-link active" href="index.html">Home</a></li>
         <li><a class="nav-link" href="services.html">Services</a></li>
