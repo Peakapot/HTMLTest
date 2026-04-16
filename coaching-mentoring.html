@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Peakapot coaching and mentoring for AI security careers from beginner to experienced." />
+  <title>Peakapot Security | Coaching & Mentoring</title>
+  <style>
+    :root { --bg:#f7fbff; --panel:#fff; --text:#10233f; --muted:#4f6787; --accent:#1d74d6; --accent-soft:#e8f2ff; --border:#cfe1f7; }
+    * { box-sizing:border-box; margin:0; padding:0; font-family:"Inter","Segoe UI",Arial,sans-serif; }
+    body { background:linear-gradient(180deg,#fafdff,var(--bg)); color:var(--text); line-height:1.6; min-height:100vh; }
+    .container { width:min(1100px,92%); margin:0 auto; }
+    header { border-bottom:1px solid var(--border); background:rgba(255,255,255,0.95); position:sticky; top:0; z-index:20; }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:0.95rem 0; }
+    .logo { text-decoration:none; color:var(--accent); font-weight:800; }
+    .nav-links { list-style:none; display:flex; gap:0.55rem; flex-wrap:wrap; }
+    .nav-link { text-decoration:none; color:var(--muted); border-radius:999px; padding:0.4rem 0.85rem; }
+    .nav-link:hover,.nav-link.active { color:var(--accent); background:var(--accent-soft); border:1px solid var(--border); }
+    main { padding:2.5rem 0 2.8rem; display:grid; gap:1.2rem; }
+    .panel { background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:1.3rem; box-shadow:0 8px 24px rgba(24,86,158,.08); }
+    h1 { margin-bottom:0.55rem; font-size:clamp(1.9rem,4vw,2.7rem); }
+    h2 { color:var(--accent); margin-bottom:0.5rem; font-size:1.2rem; }
+    p { color:var(--muted); margin-bottom:0.7rem; }
+    .path-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0.9rem; }
+    .path { border:1px solid var(--border); border-radius:12px; padding:1rem; background:#fff; }
+    .path h3 { margin-bottom:0.45rem; }
+    ul { padding-left:1.2rem; color:var(--muted); }
+    .qualifications { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0.9rem; }
+    .cta-row { display:flex; flex-wrap:wrap; gap:0.7rem; margin-top:0.65rem; }
+    .btn { text-decoration:none; border:none; background:var(--accent); color:#fff; padding:0.7rem 1rem; border-radius:10px; font-weight:600; display:inline-block; }
+    .btn.secondary { background:#fff; color:var(--accent); border:1px solid var(--border); }
+    .book-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; }
+    label { display:block; margin-bottom:0.3rem; color:var(--muted); font-size:0.9rem; }
+    input,select,textarea { width:100%; border:1px solid var(--border); border-radius:8px; padding:0.68rem; color:var(--text); }
+    textarea { min-height:110px; resize:vertical; }
+    .data-points {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.5;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(75, 164, 255, 0.22) 0 3px, transparent 4px),
+        radial-gradient(circle at 28% 72%, rgba(75, 164, 255, 0.22) 0 3px, transparent 4px),
+        radial-gradient(circle at 58% 30%, rgba(75, 164, 255, 0.2) 0 3px, transparent 4px),
+        radial-gradient(circle at 76% 62%, rgba(75, 164, 255, 0.2) 0 3px, transparent 4px),
+        radial-gradient(circle at 88% 16%, rgba(75, 164, 255, 0.18) 0 3px, transparent 4px);
+    }
+    footer { border-top:1px solid var(--border); color:var(--muted); text-align:center; padding:1.2rem 0 2rem; }
+    @media (max-width:900px){ .path-grid,.qualifications,.book-grid{grid-template-columns:1fr;} .nav{flex-direction:column; align-items:flex-start;} }
+  </style>
+</head>
+<body>
+  <div class="data-points" aria-hidden="true"></div>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">Peakapot Security</a>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="services.html">Services</a></li>
+        <li><a class="nav-link" href="threat-intel.html">Threat Intel</a></li>
+        <li><a class="nav-link" href="podcast.html">Podcast</a></li>
+        <li><a class="nav-link" href="blog.html">Blog & RSS</a></li>
+        <li><a class="nav-link active" href="coaching-mentoring.html">Coaching & Mentoring</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1>AI Security Coaching & Mentoring</h1>
+      <p>Personalized mentoring for cyber professionals moving into AI security, governance, and technical leadership.</p>
+      <div class="cta-row">
+        <a class="btn" href="#book-call">Book a Career Call</a>
+        <a class="btn secondary" href="https://www.linkedin.com/peakapot" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Example Career Paths</h2>
+      <div class="path-grid">
+        <article class="path">
+          <h3>Beginner</h3>
+          <ul>
+            <li>Start in SOC analyst, IT support, or junior GRC roles.</li>
+            <li>Build security fundamentals: networking, IAM, and incident response.</li>
+            <li>Learn safe AI usage and prompt risk controls for business teams.</li>
+          </ul>
+        </article>
+        <article class="path">
+          <h3>Intermediate</h3>
+          <ul>
+            <li>Move into threat hunting, cloud security, or detection engineering.</li>
+            <li>Own AI model/data risk assessments and third-party AI reviews.</li>
+            <li>Lead policy implementation for secure AI adoption.</li>
+          </ul>
+        </article>
+        <article class="path">
+          <h3>Experienced</h3>
+          <ul>
+            <li>Progress to security architect, AI security lead, or vCISO roles.</li>
+            <li>Design enterprise AI governance controls and red-team exercises.</li>
+            <li>Coach teams, report to leadership, and shape security strategy.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Industry Qualifications to Target</h2>
+      <div class="qualifications">
+        <article class="path">
+          <h3>Core Security Credentials</h3>
+          <ul>
+            <li>CompTIA Security+</li>
+            <li>SC-900 / AZ-500 (cloud + identity security basics)</li>
+            <li>CISSP or CISM for leadership-track professionals</li>
+          </ul>
+        </article>
+        <article class="path">
+          <h3>AI + Governance Credentials</h3>
+          <ul>
+            <li>ISO/IEC 42001 awareness and implementation training</li>
+            <li>NIST AI Risk Management Framework practical training</li>
+            <li>Vendor certifications in responsible AI security controls</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="book-call">
+      <h2>Book a Career Call</h2>
+      <p>Share your current level and goals. We'll map a focused 90-day progression plan in your call.</p>
+      <form action="https://formsubmit.co/daniel@peakapot.com" method="POST">
+        <input type="hidden" name="_subject" value="Career Coaching Call Request" />
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="book-grid">
+          <div>
+            <label for="full-name">Full Name</label>
+            <input id="full-name" name="name" type="text" required />
+          </div>
+          <div>
+            <label for="career-email">Email</label>
+            <input id="career-email" name="email" type="email" required />
+          </div>
+        </div>
+        <label for="level" style="margin-top:0.7rem;">Current Career Level</label>
+        <select id="level" name="level" required>
+          <option value="">Select one</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Experienced</option>
+        </select>
+        <label for="goals" style="margin-top:0.7rem;">Top career goal for this year</label>
+        <textarea id="goals" name="goals" required></textarea>
+        <div class="cta-row">
+          <button class="btn" type="submit">Request Career Call</button>
+          <a class="btn secondary" href="https://www.linkedin.com/peakapot" target="_blank" rel="noopener noreferrer">Message on LinkedIn</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 Peakapot Security.</footer>
+</body>
+</html>
