@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Peakapot Security blog with curated cyber and AI headlines via live RSS feeds." />
+  <title>Peakapot Security Blog | Cyber & AI RSS</title>
+  <style>
+    :root {
+      --bg: #060b16;
+      --panel: #0f172a;
+      --text: #d6e2ff;
+      --muted: #92a5d1;
+      --accent: #38bdf8;
+      --accent-2: #22d3ee;
+      --border: #1f2b46;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #050913, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 16, 33, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      padding: 2.8rem 0 1.2rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 70ch;
+      margin-bottom: 1rem;
+    }
+
+    .rss-links {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      margin-top: 0.8rem;
+    }
+
+    .rss-links a {
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.45rem 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .rss-links a:hover {
+      text-decoration: underline;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      padding: 1.5rem 0 2.2rem;
+    }
+
+    .panel {
+      background: rgba(15, 23, 42, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+      color: var(--accent-2);
+    }
+
+    .feed-list {
+      list-style: none;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .feed-list li {
+      border-top: 1px dashed rgba(146, 165, 209, 0.25);
+      padding-top: 0.75rem;
+    }
+
+    .feed-list li:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .feed-list a {
+      color: #dff4ff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .feed-list a:hover {
+      text-decoration: underline;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+
+    .post-list {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    .post {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem;
+      background: rgba(10, 18, 35, 0.86);
+    }
+
+    .post p {
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.3rem 0 2rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 840px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">Peakapot Security</a>
+      <a class="nav-link" href="index.html">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Peakapot Security Blog</h1>
+      <p class="intro">
+        Insights, practical guidance, and daily signals from the cyber and AI landscape.
+        The latest headlines below are pulled from live RSS sources.
+      </p>
+      <div class="rss-links">
+        <a href="news-feed.xml">Peakapot RSS Index</a>
+        <a href="https://feeds.feedburner.com/TheHackersNews" target="_blank" rel="noopener noreferrer">Cyber RSS Source</a>
+        <a href="https://www.artificialintelligence-news.com/feed/" target="_blank" rel="noopener noreferrer">AI RSS Source</a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>From the Peakapot Team</h2>
+      <div class="post-list">
+        <article class="post">
+          <h3>How We Triage Cyber Risk in 15 Minutes</h3>
+          <p>Our lightweight triage model maps incidents by blast radius, exploit maturity, and business criticality.</p>
+        </article>
+        <article class="post">
+          <h3>AI Adoption and Security: Start with Data Boundaries</h3>
+          <p>Define what can and cannot leave your environment before rolling out copilots, assistants, or agent workflows.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Latest Cyber News</h2>
+        <ul class="feed-list" id="cyber-feed">
+          <li class="meta">Loading latest cyber headlines…</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <h2>Latest AI News</h2>
+        <ul class="feed-list" id="ai-feed">
+          <li class="meta">Loading latest AI headlines…</li>
+        </ul>
+      </article>
+    </section>
+    <p class="small">If headlines do not load in your browser due to feed/CORS restrictions, use the RSS source links above to subscribe directly.</p>
+  </main>
+
+  <footer>
+    &copy; 2026 Peakapot Security · Cyber + AI intelligence updates.
+  </footer>
+
+  <script>
+    const feedTargets = [
+      {
+        elementId: 'cyber-feed',
+        source: 'https://feeds.feedburner.com/TheHackersNews'
+      },
+      {
+        elementId: 'ai-feed',
+        source: 'https://www.artificialintelligence-news.com/feed/'
+      }
+    ];
+
+    const renderItems = (listElement, items) => {
+      if (!items || !items.length) {
+        listElement.innerHTML = '<li class="meta">No items found right now.</li>';
+        return;
+      }
+
+      listElement.innerHTML = items.slice(0, 5).map((item) => {
+        const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString() : 'Unknown date';
+        return `
+          <li>
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+            <p class="meta">${date}</p>
+          </li>
+        `;
+      }).join('');
+    };
+
+    const loadFeed = async ({ elementId, source }) => {
+      const listElement = document.getElementById(elementId);
+      const endpoint = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(source)}`;
+
+      try {
+        const response = await fetch(endpoint);
+        const data = await response.json();
+        renderItems(listElement, data.items);
+      } catch (error) {
+        listElement.innerHTML = `<li class="meta">Unable to load this feed automatically. <a href="${source}" target="_blank" rel="noopener noreferrer">Open RSS feed</a></li>`;
+      }
+    };
+
+    feedTargets.forEach(loadFeed);
+  </script>
+</body>
+</html>

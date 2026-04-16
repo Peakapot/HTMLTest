@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Peakapot Security News Sources</title>
+    <link>https://example.com/blog.html</link>
+    <description>RSS source index for Peakapot Security cyber and AI news tracking.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Apr 2026 00:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>Cyber News Feed (The Hacker News)</title>
+      <link>https://feeds.feedburner.com/TheHackersNews</link>
+      <description>Latest cybersecurity threat intelligence and incident coverage.</description>
+      <guid>https://feeds.feedburner.com/TheHackersNews</guid>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>AI News Feed (AI News)</title>
+      <link>https://www.artificialintelligence-news.com/feed/</link>
+      <description>Latest AI platform, policy, and ecosystem updates.</description>
+      <guid>https://www.artificialintelligence-news.com/feed/</guid>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
