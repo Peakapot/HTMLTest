@@ -23,6 +23,37 @@
     p { color:var(--muted); margin-bottom:0.7rem; }
     .path-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0.9rem; }
     .path { border:1px solid var(--border); border-radius:12px; padding:1rem; background:#fff; }
+    .path-diagram { display:flex; flex-direction:column; gap:0.8rem; margin-top:0.4rem; }
+    .diagram-step {
+      border:1px solid var(--border);
+      background:var(--accent-soft);
+      border-radius:10px;
+      padding:0.75rem;
+      position:relative;
+    }
+    .diagram-step:not(:last-child)::after {
+      content:"↓";
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:-1.25rem;
+      color:var(--accent);
+      font-weight:700;
+    }
+    .step-title { font-size:0.95rem; font-weight:700; color:var(--text); }
+    .step-time { display:block; color:var(--muted); font-size:0.85rem; margin-top:0.1rem; }
+    .badge-row { display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:0.5rem; }
+    .badge {
+      display:inline-flex;
+      align-items:center;
+      border:1px solid var(--border);
+      border-radius:999px;
+      padding:0.2rem 0.55rem;
+      background:#fff;
+      color:var(--accent);
+      font-size:0.8rem;
+      font-weight:700;
+    }
     .path h3 { margin-bottom:0.45rem; }
     ul { padding-left:1.2rem; color:var(--muted); }
     .qualifications { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0.9rem; }
@@ -73,7 +104,7 @@
       <p>Personalized mentoring for cyber professionals moving into AI security, governance, and technical leadership.</p>
       <div class="cta-row">
         <a class="btn" href="#book-call">Book a Career Call</a>
-        <a class="btn secondary" href="https://www.linkedin.com/peakapot" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/peakapot" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
       </div>
     </section>
 
@@ -82,28 +113,122 @@
       <div class="path-grid">
         <article class="path">
           <h3>Beginner</h3>
-          <ul>
-            <li>Start in SOC analyst, IT support, or junior GRC roles.</li>
-            <li>Build security fundamentals: networking, IAM, and incident response.</li>
-            <li>Learn safe AI usage and prompt risk controls for business teams.</li>
-          </ul>
+          <div class="path-diagram" aria-label="Beginner career path diagram">
+            <div class="diagram-step">
+              <span class="step-title">Foundation Skills</span>
+              <span class="step-time">Months 0-3</span>
+              <div class="badge-row">
+                <span class="badge">N+ Network+</span>
+                <span class="badge">ITIL Foundation</span>
+              </div>
+            </div>
+            <div class="diagram-step">
+              <span class="step-title">Security Baseline</span>
+              <span class="step-time">Months 3-6</span>
+              <div class="badge-row">
+                <span class="badge">S+ Security+</span>
+                <span class="badge">SC-900</span>
+              </div>
+            </div>
+            <div class="diagram-step">
+              <span class="step-title">First Security Role</span>
+              <span class="step-time">Months 6-12</span>
+              <div class="badge-row">
+                <span class="badge">SOC Analyst</span>
+                <span class="badge">AI Risk Basics</span>
+              </div>
+            </div>
+          </div>
         </article>
         <article class="path">
           <h3>Intermediate</h3>
-          <ul>
-            <li>Move into threat hunting, cloud security, or detection engineering.</li>
-            <li>Own AI model/data risk assessments and third-party AI reviews.</li>
-            <li>Lead policy implementation for secure AI adoption.</li>
-          </ul>
+          <div class="path-diagram" aria-label="Intermediate career path diagram">
+            <div class="diagram-step">
+              <span class="step-title">Hands-On Security</span>
+              <span class="step-time">Months 0-4</span>
+              <div class="badge-row">
+                <span class="badge">CYSA+</span>
+                <span class="badge">AZ-500</span>
+              </div>
+            </div>
+            <div class="diagram-step">
+              <span class="step-title">Cloud + Detection Focus</span>
+              <span class="step-time">Months 4-8</span>
+              <div class="badge-row">
+                <span class="badge">SIEM Engineering</span>
+                <span class="badge">MITRE ATT&CK</span>
+              </div>
+            </div>
+            <div class="diagram-step">
+              <span class="step-title">AI Security Ownership</span>
+              <span class="step-time">Months 8-12</span>
+              <div class="badge-row">
+                <span class="badge">AI Governance</span>
+                <span class="badge">Vendor Risk Lead</span>
+              </div>
+            </div>
+          </div>
         </article>
         <article class="path">
           <h3>Experienced</h3>
-          <ul>
-            <li>Progress to security architect, AI security lead, or vCISO roles.</li>
-            <li>Design enterprise AI governance controls and red-team exercises.</li>
-            <li>Coach teams, report to leadership, and shape security strategy.</li>
-          </ul>
+          <div class="path-diagram" aria-label="Experienced career path diagram">
+            <div class="diagram-step">
+              <span class="step-title">Leadership Credentials</span>
+              <span class="step-time">Months 0-4</span>
+              <div class="badge-row">
+                <span class="badge">CISSP</span>
+                <span class="badge">CISM</span>
+              </div>
+            </div>
+            <div class="diagram-step">
+              <span class="step-title">Architecture + Governance</span>
+              <span class="step-time">Months 4-8</span>
+              <div class="badge-row">
+                <span class="badge">SABSA</span>
+                <span class="badge">ISO 42001</span>
+              </div>
+            </div>
+            <div class="diagram-step">
+              <span class="step-title">Strategic Influence</span>
+              <span class="step-time">Months 8-12</span>
+              <div class="badge-row">
+                <span class="badge">vCISO Track</span>
+                <span class="badge">Board Reporting</span>
+              </div>
+            </div>
+          </div>
         </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Example Certification Plan Timeline</h2>
+      <p>A practical progression for someone building from core IT networking into security operations and governance capability.</p>
+      <div class="path-diagram" aria-label="N+, S+, CISMP timeline">
+        <div class="diagram-step">
+          <span class="step-title">Stage 1 - N+ (Network+)</span>
+          <span class="step-time">Months 0-3</span>
+          <div class="badge-row">
+            <span class="badge">N+</span>
+            <span class="badge">Networking Labs</span>
+          </div>
+        </div>
+        <div class="diagram-step">
+          <span class="step-title">Stage 2 - S+ (Security+)</span>
+          <span class="step-time">Months 3-7</span>
+          <div class="badge-row">
+            <span class="badge">S+</span>
+            <span class="badge">SOC Workflows</span>
+          </div>
+        </div>
+        <div class="diagram-step">
+          <span class="step-title">Stage 3 - CISMP</span>
+          <span class="step-time">Months 7-12</span>
+          <div class="badge-row">
+            <span class="badge">CISMP</span>
+            <span class="badge">Policy & Governance</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -127,6 +252,17 @@
           </ul>
         </article>
       </div>
+    </section>
+
+    <section class="panel">
+      <h2>Coaching & Mentoring Support Summary</h2>
+      <ul>
+        <li><strong>Career mapping:</strong> We identify your current level, target role, and the best certification sequence for your timeline.</li>
+        <li><strong>Structured learning plans:</strong> You get a step-by-step plan with weekly outcomes, practical labs, and realistic milestones.</li>
+        <li><strong>CV and interview coaching:</strong> We translate technical experience into role-ready achievements and practice interview responses.</li>
+        <li><strong>Accountability mentoring:</strong> Regular check-ins keep you consistent, unblock obstacles, and adapt the plan as your confidence grows.</li>
+        <li><strong>Leadership development:</strong> For experienced professionals, mentoring includes stakeholder communication, strategy framing, and AI governance influence.</li>
+      </ul>
     </section>
 
     <section class="panel" id="book-call">
@@ -156,7 +292,7 @@
         <textarea id="goals" name="goals" required></textarea>
         <div class="cta-row">
           <button class="btn" type="submit">Request Career Call</button>
-          <a class="btn secondary" href="https://www.linkedin.com/peakapot" target="_blank" rel="noopener noreferrer">Message on LinkedIn</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/peakapot" target="_blank" rel="noopener noreferrer">Message on LinkedIn</a>
         </div>
       </form>
     </section>
